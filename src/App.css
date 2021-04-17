@@ -27,7 +27,6 @@ body {
 
 .search-container {
   display: flex;
-  /* width:80%; */
   align-items: center;
   justify-content: center;
 }
@@ -125,8 +124,6 @@ form > label {
   left: 0;
 }
 
-/*Annimations */
-
 .fade-out {
   animation: fadeOut ease 2s;
 }
@@ -138,8 +135,26 @@ form > label {
     opacity: 0;
   }
 }
+.button-return {
+  background-color: RGB(255, 117, 117);
+  color:white;
+  width: 100px;
+  height: 30px;
+   border: none;
+  cursor: pointer;
+  font: 400 17px Roboto, Arial, sans-serif;
+margin: 30px 20px ;
+  color: #fff;
+  border-radius: 3px;
+  text-decoration: none;
+}
 
-/* Responsive  */
+.video{
+margin: 20px;
+}
+
+
+
 
 @media (min-width: 750px) {
   form {

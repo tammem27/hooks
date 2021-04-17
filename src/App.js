@@ -4,7 +4,8 @@ import AddMovie from './components/AddMovie';
 import MovieList from './components/MovieList';
 import Search from './components/Search';
 import { moviesData } from './Data';
-
+import Description from './components/Description';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App() {
   const [movies, setMovies] = useState(moviesData);
   const [searchRating, setSearchRating] = useState(1);
@@ -19,12 +20,20 @@ function App() {
 
   return (
     <div className="App">
+        <BrowserRouter>
+
             <Search
+            
         searchRating={searchRating}
         searchValue={searchValue}
         handleRating={handleRating}
         handleSearch={handleSearch}
       />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
       <MovieList
         movies={movies.filter(
           (movie) =>
@@ -34,6 +43,14 @@ function App() {
             movie.rating >= searchRating
         )}
       />
+      )}
+      />
+          <Route
+            path="/Description/:name"
+            render={(props)=> <Description movies={movies} {...props}/>}
+          />
+            </Switch>
+      </BrowserRouter>
       <AddMovie handleAdd={handleAdd} />
       
   
